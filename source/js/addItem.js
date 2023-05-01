@@ -5,46 +5,36 @@ const descripProd = document.getElementById("descripcion");
 const urlProd = document.getElementById("url");
 const botonEnviar = document.getElementById("submit");
 
-console.log(nombreProd);
-console.log(precioProd);
+console.log(`El nombre del producto es ${nombreProd}`);
+console.log("Hola esto es un console");
 
-function codigoUnico() {
-    let repeated;
-    let regCode=[];
-
-function random() {
-  do {
-    let code = parseInt(Math.random() * 999999);
-    repeated = repeatedCode(code);
-    if (!repeated) {
-      regCode.push(code);
-      return code;
-    } else {
-      repeated = false;
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  function random() {
+    let arraycode=[];
+    while (arraycode.length < 8) {
+      let codigo = parseInt(Math.random() * 99999);
+      if (!arraycode.includes(codigo)) {
+        arraycode.push(codigo);
+      }
     }
-  } while (!repeated);
-}
-function repeatedCode(code) {
-  for (let i = 0; i < regCode.length; i++) {
-    if (code === regCode[i]) {
-      repeated = true;
-      break;
-    }
+    return arraycode;
   }
-  return repeated;
-}
-let codigoUnico = random();
- return codigoUnico;
-}
-
-form.addEventListener("submit", (evento) => {
+  function numeroUnico(){
+    let array = random();
+    let unico;
+    for(let i = 0 ; i <= array.length; i++){
+       unico = array[i];
+    }
+    return unico;
+  }
     const productos = {
-        // codigo: codigoUnico(),
         nombre: nombreProd.value ,
         precio: precioProd.value ,
         descripcion: descripProd.value ,
         imagen: urlProd.value,
+        codigo: numeroUnico(),
     };
     
-    console.log(productos);
+    console.log("producto nuevo: ", productos);
 });
