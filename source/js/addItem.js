@@ -23,9 +23,11 @@ form.addEventListener("submit", (e) => {
   function numeroUnico(){
     let array = random();
     let unico;
-    for(let i = 0 ; i <= array.length; i++){
-       unico = array[i];
-    }
+    // for(let i = 0 ; i <= array.length; i++){
+    //    unico = array[i];
+    // }
+    unico = array[array.length-1];
+    console.log(`Hola ${unico}`);
     return unico;
   }
     const productos = {
