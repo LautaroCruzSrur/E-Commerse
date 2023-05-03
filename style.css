@@ -1,0 +1,124 @@
+/***** Start - Navbar Style *****/
+.main-list-offcanvas li {
+   color: dodgerblue;
+   margin-bottom: 0px;
+   list-style: none;
+   margin-left: 10px;
+}
+.main-list-offcanvas a {
+   margin-top: 15px;
+   display: inline-block;
+   font-size: 24px;
+   text-decoration: none;
+   width: 300px;
+   height: 15px;
+   line-height: 30px;
+   color: dodgerblue;
+   margin-right: 50px;
+   text-align: justify;
+   transition: all 300ms ease;
+}
+/***** End - Navbar Style *****/
+
+/***** Start - Style Carousel *****/
+.c-img {
+   margin: 30px;
+   padding: 40px;
+   width: 50%;
+   height: 50%;
+   margin-left: 25%;
+   justify-content: center;
+   align-items: center;
+}
+@media screen and (max-width: 576px){
+   #container{
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      margin-left: 24%;
+   }   
+} 
+@media screen and (max-width: 768px){
+   #container{
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 70%;
+      height: 70%;
+      margin-left: 14%;
+   }   
+}   
+@media screen and (max-width: 992px){
+   #container{
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 60%;
+      height: 60%;
+      margin-left: 18%;
+   }   
+}  
+/***** End - Style Carousel *****/
+
+/***** Start - Style footer *****/
+.footer-area{
+   
+   width: 100%;
+   background-color: darkred;
+}
+.footer-area .group-1{
+   margin: 20px;
+   width: 100%;
+   max-width: 1200px;
+   
+   display:grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap:50px;
+   padding: 45px 0px;
+}
+.footer-area .group-1 .single-footer h3{
+   color: aliceblue;
+   margin-bottom: 25px;
+   font-size: 20px;
+   margin-left: 20px;
+}
+.footer-area .group-1 .single-footer li{
+   color: aliceblue;
+   margin-bottom: 0px;
+   list-style: none;
+   margin-left: -10px;
+}
+.footer-area .group-1 .single-footer i{
+   color: aliceblue;
+}
+.footer-area .group-1 .single-footer a{
+   display: inline-block;
+   text-decoration: none;
+   width: 300px;
+   height: 10px;
+   line-height: 30px;
+   color: aliceblue;
+   margin-right: 10px;
+   text-align: justify;
+   transition: all 300ms ease;
+}
+.footer-area .group-1 .single-footer a:hover{
+   color: dodgerblue;
+}
+.footer-area .group-2{
+   background-color: darkred;
+   padding: 15px 10px;
+   text-align: center;
+   color: #fff;
+}
+.footer-area .group-2 small{
+   font-size: 15px;
+}
+@media screen and (max-width:800px){
+   .footer-area .group-1{
+       width: 90%;
+       grid-template-columns: repeat(1, 1fr);
+       grid-gap:30px;
+       padding: 35px 0px;
+   }
+}
+/***** End - Style footer *****/
