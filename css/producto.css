@@ -1,3 +1,14 @@
+.buttonBack {
+    position: absolute;
+    top: 5px;
+    color: black;
+}
 .buttonStar{
     width: 10%;
+}
+
+.buttonBuy{
+    background-color: brown;
+    width: 100%;
+    color: white;
 }
