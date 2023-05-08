@@ -33,6 +33,16 @@ form.addEventListener("submit", (e) => {
    productview();
 });
 
+function productEdit(boton){
+  let codigoID = boton.id;
+  const producto = productos.find((producto) => producto.id === codigoID); // Buscamos el producto a editar
+
+  if (producto) {
+    document.getElementById("nombre").value = producto.titulo; // Seteamos el valor del input nombre
+    document.getElementById("precio").value = producto.precio; // Seteamos el valor del input precio
+    document.getElementById("descripcion").value = producto.informacion; // Seteamos el valor del input descripcion
+  }
+    }
 
 function productview(){
   table.querySelector("tbody").innerHTML = "";
@@ -43,8 +53,8 @@ function productview(){
     <td>${producto.precio}</td>
     <td>${producto.informacion}</td>
     <td>
-    <button class="editar" data-id="">Editar</button>
-    <button class="eliminar" data-id="">Eliminar</button> 
+    <button class="editar" onclick="productEdit(this)" id="${producto.codigo}">Editar</button>
+    <button class="eliminar" id="${producto.codigo}">Eliminar</button> 
     </td>
   `;
     table.querySelector("tbody").appendChild(tr);
