@@ -5,6 +5,8 @@ const descripProd = document.getElementById("descripcion");
 const urlProd = document.getElementById("url");
 const botonEnviar = document.getElementById("submit");
 const table = document.getElementById("datetable");
+const tituloModal = document.getElementById("exampleModalLabel");
+const textModal = document.getElementsByClassName("modal-title");
 
 let productos = [];
 
@@ -32,6 +34,9 @@ form.addEventListener("submit", (e) => {
   };
      productos.push(producto);
      console.log("producto nuevo: ", productos);
+     tituloModal.textContent = 'Nuevo Producto';
+     textModal.innerHTML="Se a Ingresado un nuevo producto.";
+     
      
   } else if (modo === "editar") {
     const index = productos.findIndex((producto) => producto.codigo === editId); // Buscamos el indice del producto a editar
@@ -42,7 +47,6 @@ form.addEventListener("submit", (e) => {
       product.precio = precio;
       product.informacion = informacion;
       product.foto = foto;
-      console.log("1");
     }
   }
   form.reset(); // Reseteamos el formulario
@@ -58,7 +62,6 @@ table.addEventListener("click", (e) => {
     // Si el elemento clickeado tiene la clase editar
     const id = e.target.dataset.id; // Obtenemos el id del producto a editar
     const producto = productos.find((producto) => producto.codigo === id); // Buscamos el producto a editar
-    console.log("2");
     if (producto) {
       document.getElementById("nombre").value = producto.titulo; // Seteamos el valor del input nombre
       document.getElementById("precio").value = producto.informacion; // Seteamos el valor del input precio
@@ -68,7 +71,6 @@ table.addEventListener("click", (e) => {
       form.dataset.mode = "editar"; // Cambiamos el modo del formulario
       form.dataset.editId = id; // Seteamos el id del producto a editar
       botonEnviar.textContent = "Editar"; // Cambiamos el texto del boton
-      console.log("3");
     }
   }
 });
@@ -76,12 +78,10 @@ table.addEventListener("click", (e) => {
   if (e.target.classList.contains("eliminar")) {
     const id = e.target.dataset.id; // Obtenemos el id del producto a eliminar
     const index = productos.findIndex((producto) => producto.codigo === id);
-    console.log("4");
     if (index !== -1) {
       productos.splice(index, 1);
       //agregar la funcion para actualizar la lista de productos.
       productview()
-      console.log("5");
     }
   }
 });
@@ -109,7 +109,6 @@ const obtenerProductos = localStorage.getItem("productos");
 if (obtenerProductos) {
   productos = JSON.parse(obtenerProductos);
   productview();
-  console.log("6");
 }
 
 
