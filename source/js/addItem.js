@@ -102,8 +102,8 @@ function productview() {
     <td>${producto.precio}</td>
     <td>${producto.informacion}</td>
     <td>
-    <button class="editar" data-id="${producto.codigo}">Editar</button>
-    <button class="eliminar" data-id="${producto.codigo}">Eliminar</button> 
+    <button class="editar btn btn-warning" data-id="${producto.codigo}">Editar</button>
+    <button class="eliminar btn btn-danger" btn btn-danger data-id="${producto.codigo}">Eliminar</button> 
     </td>
   `;
     table.querySelector("tbody").appendChild(tr);
