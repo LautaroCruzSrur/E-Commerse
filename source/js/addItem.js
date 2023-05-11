@@ -1,3 +1,5 @@
+
+
 const form = document.querySelector("form");
 const nombreProd = document.getElementById("nombre");
 const precioProd = document.getElementById("precio");
@@ -7,8 +9,13 @@ const botonEnviar = document.getElementById("submit");
 const table = document.getElementById("datetable");
 const tituloModal = document.getElementById("exampleModalLabel");
 const textModal = document.getElementsByClassName("modal-title");
+ 
+ 
 
 let productos = [];
+
+
+
 
 console.log(`El nombre del producto es ${nombreProd}`);
 console.log("Hola esto es un console");
@@ -127,4 +134,4 @@ function generateUUIDv4() {
 }
 
 
-export default productos
+export default productos;

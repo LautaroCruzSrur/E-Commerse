@@ -1,3 +1,5 @@
-import {productos} from '../js/addItem.js';
+import defaultExport from "./addItem.js"
+
+
 
 console.log(productos);
