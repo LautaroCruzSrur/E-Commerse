@@ -83,3 +83,18 @@ p a {
     text-decoration: none;
     color: #003DFF;
 }
+.text-principal{
+    margin-top: 3em;
+    text-align: center;
+    background-color: #CC3434;
+    color:#fff;
+    padding: 1em;
+  }
+  .text-principal p{
+    margin: 1em;
+  }
+  #nosotros{
+    width: 30em;
+    height: 30em;
+    margin: 5em;
+  }
