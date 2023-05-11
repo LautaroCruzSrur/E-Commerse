@@ -126,3 +126,5 @@ function generateUUIDv4() {
   return uuid;
 }
 
+
+export default productos
