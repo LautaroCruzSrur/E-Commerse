@@ -36,7 +36,7 @@ document.querySelector('#login-form').addEventListener('submit', (e) => {
   
   if(email === 'admin@admin' && password === 'admin') {
       // redirigir a la página de administración
-      window.location.href = '../html/admin.html';
+      window.location.href = '/source/html/admin.html';
   } else {
       // código para validar y redirigir a la página de usuarios registrados
   }

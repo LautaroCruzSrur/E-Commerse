@@ -60,5 +60,5 @@ registerForm.addEventListener('submit', function(event) {
   alert('Registro exitoso. Tu cuenta ha sido creada satisfactoriamente.');
 
   //Redirigimos al usuario a la página de inicio
-  window.location.href = '../html/login.html';
+  window.location.href = '/source/html/login.html';
 });
