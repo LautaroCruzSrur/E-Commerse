@@ -1,4 +1,4 @@
-import defaultExport from "./addItem.js"
+import {productos} from "./addItem.js"
 
 
 
