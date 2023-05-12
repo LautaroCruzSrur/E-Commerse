@@ -12,7 +12,7 @@ const textModal = document.getElementsByClassName("modal-title");
  
  
 
-let productos = [];
+export let productos = [];
 
 
 
@@ -134,4 +134,4 @@ function generateUUIDv4() {
 }
 
 
-export default productos;
+

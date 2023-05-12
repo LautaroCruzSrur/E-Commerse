@@ -1,3 +1,8 @@
+import { productos } from "./addItem";
+
+console.log("hola mundo");
+console.log(productos);
+
 // Obtener el botón de logout
 const logoutButton = document.getElementById('logout-btn');
 
