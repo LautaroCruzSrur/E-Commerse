@@ -21,81 +21,72 @@
 /***** End - Navbar Style *****/
 
 /***** Start - Style Carousel *****/
+#bacground {
+   background-image: url(./img/Banner.gif);
+   background-size: cover;
+}
+
 .c-img {
-   margin: 30px;
-   padding: 40px;
-   width: 50%;
-   height: 50%;
-   margin-left: 25%;
+   margin: 0px;
+   padding: 20px;
+   width: 40%;
+   height: 40%;
+   display: flex;
    justify-content: center;
    align-items: center;
 }
-@media screen and (max-width: 576px){
-   #container{
-      background-size: contain;
-      background-repeat: no-repeat;
-      width: 100%;
-      height: 100%;
-      margin-left: 24%;
-   }   
-} 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 2400px){
    #container{
       background-size: contain;
       background-repeat: no-repeat;
       width: 70%;
       height: 70%;
-      margin-left: 14%;
-   }   
-}   
-@media screen and (max-width: 992px){
-   #container{
-      background-size: contain;
-      background-repeat: no-repeat;
-      width: 60%;
-      height: 60%;
-      margin-left: 18%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
    }   
 }  
 /***** End - Style Carousel *****/
 
 /***** Start - Style footer *****/
-.footer-area{
-   
+.footer-area{   
+   margin-top: 20px;
    width: 100%;
    background-color: darkred;
 }
 .footer-area .group-1{
-   margin: 20px;
+   display: flex;
+   justify-content: center;
    width: 100%;
-   max-width: 1200px;
-   
-   display:grid;
-   grid-template-columns: repeat(3, 1fr);
-   grid-gap:50px;
-   padding: 45px 0px;
+}
+.footer-area .group-1 .single-footer{
+  display: flex;
+  justify-content: center;
 }
 .footer-area .group-1 .single-footer h3{
+   display: flex;
+   justify-content: center;
+   align-items: center;
    color: aliceblue;
-   margin-bottom: 25px;
-   font-size: 20px;
-   margin-left: 20px;
+   margin-top: 20px;
+   font-size: 25px;
 }
 .footer-area .group-1 .single-footer li{
    color: aliceblue;
-   margin-bottom: 0px;
    list-style: none;
-   margin-left: -10px;
+   display: flex;
+   justify-content: center;
 }
 .footer-area .group-1 .single-footer i{
    color: aliceblue;
 }
+.footer-area .group-1 .single-footer i:hover{
+   color: dodgerblue;
+}
 .footer-area .group-1 .single-footer a{
    display: inline-block;
    text-decoration: none;
-   width: 300px;
-   height: 10px;
-   line-height: 30px;
+  
    color: aliceblue;
    margin-right: 10px;
    text-align: justify;
@@ -108,7 +99,7 @@
    background-color: darkred;
    padding: 15px 10px;
    text-align: center;
-   color: #fff;
+   color: grey;
 }
 .footer-area .group-2 small{
    font-size: 15px;
