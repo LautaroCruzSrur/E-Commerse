@@ -1,10 +1,8 @@
-const user = JSON.parse(localStorage.getItem("currentUser"));
-console.log(user.role);
-if(user.role == "invitado"){
-  console.log("1");
-  window.location.href='./source/html/registro.html';
-  console.log("2");
-}
+// const user = JSON.parse(localStorage.getItem("currentUser"));
+// console.log(user.role);
+// if(user.role == "invitado"){
+//   window.location.href='./source/html/registro.html';
+// } control de usuario
 const productos = JSON.parse(localStorage.getItem("productos")) || [];
 const button = document.getElementById("insert");
 
@@ -12,14 +10,14 @@ const button = document.getElementById("insert");
 const logoutButton = document.getElementById('logout-btn');
 
 // Agregar un evento de escucha al botón de logout
-// logoutButton.addEventListener('click', function() {
-//   // Borrar el usuario actual del localStorage
-//   localStorage.removeItem('currentUser');
+logoutButton.addEventListener('click', function() {
+  // Borrar el usuario actual del localStorage
+  localStorage.removeItem('currentUser');
 
 
-//   // Redirigir al usuario a la página de registro
-//   window.location.href = '/source/html/registro.html';
-// });
+  // Redirigir al usuario a la página de registro
+  window.location.href = '/source/html/registro.html';
+});
 // valores nuevos
 console.log("hola mundo");
 console.log(productos);

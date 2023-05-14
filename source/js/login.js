@@ -24,7 +24,7 @@ loginForm.addEventListener('submit', function(event) {
   localStorage.setItem('currentUser', JSON.stringify(currentUser));
 
   //Redirigimos al usuario a la página de inicio
-  window.location.href = '.../index.html';
+  window.location.href = '../../index.html';
 });
 
 //creando el usuario Admin
