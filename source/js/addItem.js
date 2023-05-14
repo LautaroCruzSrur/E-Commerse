@@ -12,7 +12,7 @@ const textModal = document.getElementsByClassName("modal-title");
  
  
 
-export let productos = [];
+let productos = [];
 
 
 
@@ -32,6 +32,7 @@ form.addEventListener("submit", (e) => {
   if (modo === "add") {
     let codigo = generateUUIDv4();
   const producto = {
+    categoria,//agregar al form
     titulo,
     precio,
     informacion,
