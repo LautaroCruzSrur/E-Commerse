@@ -1,4 +1,3 @@
-//localStorage.setItem("productoDetalle", "248861ee-a8f1-4aab-8cde-e39581b1dfcc");
 let nombre = document.getElementById("nombreP");
 let precio = document.getElementById("precioP");
 let categoria = document.getElementById("categoriaP");

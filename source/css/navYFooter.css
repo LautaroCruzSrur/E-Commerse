@@ -1,0 +1,87 @@
+/***** Start - Navbar Style *****/
+.main-list-offcanvas li {
+    color: dodgerblue;
+    margin-bottom: 0px;
+    list-style: none;
+    margin-left: 10px;
+ }
+ .main-list-offcanvas a {
+    margin-top: 15px;
+    display: inline-block;
+    font-size: 24px;
+    text-decoration: none;
+    width: 300px;
+    height: 15px;
+    line-height: 30px;
+    color: dodgerblue;
+    margin-right: 50px;
+    text-align: justify;
+    transition: all 300ms ease;
+ }
+ /***** End - Navbar Style *****/
+
+ /***** Start - Style footer *****/
+.footer-area{   
+    margin-top: 20px;
+    width: 100%;
+    background-color: darkred;
+ }
+ .footer-area .group-1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+ }
+ .footer-area .group-1 .single-footer{
+   display: flex;
+   justify-content: center;
+ }
+ .footer-area .group-1 .single-footer h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    margin-top: 20px;
+    font-size: 25px;
+ }
+ .footer-area .group-1 .single-footer li{
+    color: aliceblue;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+ }
+ .footer-area .group-1 .single-footer i{
+    color: aliceblue;
+ }
+ .footer-area .group-1 .single-footer i:hover{
+    color: dodgerblue;
+ }
+ .footer-area .group-1 .single-footer a{
+    display: inline-block;
+    text-decoration: none;
+   
+    color: aliceblue;
+    margin-right: 10px;
+    text-align: justify;
+    transition: all 300ms ease;
+ }
+ .footer-area .group-1 .single-footer a:hover{
+    color: dodgerblue;
+ }
+ .footer-area .group-2{
+    background-color: darkred;
+    padding: 15px 10px;
+    text-align: center;
+    color: grey;
+ }
+ .footer-area .group-2 small{
+    font-size: 15px;
+ }
+ @media screen and (max-width:800px){
+    .footer-area .group-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+ }
+ /***** End - Style footer *****/
