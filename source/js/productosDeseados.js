@@ -1,4 +1,4 @@
-const deseados = [
+/*const deseados = [
     {
         id: 1,
         nombre: 'Silla 1 classic',
@@ -21,23 +21,34 @@ const deseados = [
     }
 ]
 
+
 const prepararLocalStorage = () => {
     localStorage.clear();
-    for (const producto of deseados) {
-        localStorage.setItem("deseados", JSON.stringify(deseados))
-    }
-}
+    for (const producto of deseados /*productos*//*) {*/
+       /* localStorage.setItem("deseados", JSON.stringify(deseados))
+    }*/
 
-const mostrarProductosDeseados = () => {
-    cargarProductosDeseados();
-    botonesQuitarDeseado();
+
+    
+
+    const productos = JSON.parse(localStorage.getItem('productos'));
+   
+
+    
+
+
+
+
+const mostrarProductosfavorito = () => {
+    cargarProductosfavorito();// madificar
+    botonesQuitarfavorito();
 };
 
-const cargarProductosDeseados = () => {
-    const listaDeseadosHTML = document.getElementById("listaDeseados");
+const cargarProductos = () => {
+    const listaDeseadosHTML = document.getElementById("productos");
     let deseadosHTML = "";
 
-    const listadoDeseados = localStorage.getItem("deseados");
+    const listadoDeseados = localStorage.getItem("productos");
 
     const parsedDeseados = JSON.parse(listadoDeseados)
   
@@ -65,7 +76,7 @@ const productoDeseadoHTML = (producto) => {
 };
 
 const botonesQuitarDeseado = () => {
-    const listadoDeseados = localStorage.getItem("deseados");
+    const listadoDeseados = localStorage.getItem("productos");
     const parsedDeseados = JSON.parse(listadoDeseados)
 
     for (const producto of parsedDeseados) {
@@ -75,14 +86,16 @@ const botonesQuitarDeseado = () => {
       botonQuitar.addEventListener("click", () => {
         const index = parsedDeseados.findIndex((p) => p.id == producto.id);
         parsedDeseados.splice(index, 1);
-        localStorage.removeItem("deseados");
-        localStorage.setItem("deseados", JSON.stringify(parsedDeseados));
+        localStorage.removeItem("productos");
+        localStorage.setItem("productos", JSON.stringify(parsedDeseados));
 
-        mostrarProductosDeseados();
+        mostrarProductos();
       });
     }
 };
-prepararLocalStorage();
-mostrarProductosDeseados();
 
+
+
+//prepararLocalStorage();
+mostrarProductos();
 
