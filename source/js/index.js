@@ -63,7 +63,6 @@ function ordenarCards(productos){
 function mostrarNombreUsuario() {
   // Obtener el usuario actual del localStorage
   const user = JSON.parse(localStorage.getItem("currentUser"));
-  console.log(currentUser);
   // Verificar si hay un usuario conectado
   if (user && user.nombre) {
     const userGreeting = document.getElementById("user-greeting");
@@ -73,3 +72,4 @@ function mostrarNombreUsuario() {
 
 // Llamar a la función para mostrar el nombre del usuario
 mostrarNombreUsuario();
+
