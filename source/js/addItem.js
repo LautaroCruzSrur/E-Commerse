@@ -5,57 +5,57 @@ const descripProd = document.getElementById("descripcion");
 const urlProd = document.getElementById("url");
 const botonEnviar = document.getElementById("submit");
 const table = document.getElementById("datetable");
-const tituloModal = document.getElementById("exampleModalLabel");
-const textModal = document.getElementsByClassName("modal-title");
+
 
 let productos = [];
 
 console.log(`El nombre del producto es ${nombreProd}`);
 console.log("Hola esto es un console");
 
+
+
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let titulo = nombreProd.value;
-  let precio = precioProd.value;
-  let informacion = descripProd.value;
-  let foto = urlProd.value;
-  const modo = form.dataset.mode;
-  const editId = form.dataset.editId;
-
-  if (modo === "add") {
-    let codigo = generateUUIDv4();
-  const producto = {
-    titulo,
-    precio,
-    informacion,
-    foto,
-    codigo,
-    favorito: false,
-  };
-     productos.push(producto);
-     console.log("producto nuevo: ", productos);
-     tituloModal.textContent = 'Nuevo Producto';
-     textModal.innerHTML="Se a Ingresado un nuevo producto.";
-     
-     
-  } else if (modo === "editar") {
-    const index = productos.findIndex((producto) => producto.codigo === editId); // Buscamos el indice del producto a editar
-    if (index !== -1) {
-      // Si el producto existe
-      const product = productos[index]; // Obtenemos el producto a editar del array
-      product.titulo = titulo;
-      product.precio = precio;
-      product.informacion = informacion;
-      product.foto = foto;
+    e.preventDefault();
+    let titulo = nombreProd.value;
+    console.log(titulo);
+    let precio = precioProd.value;
+    let informacion = descripProd.value;
+    let foto = urlProd.value;
+    const modo = form.dataset.mode;
+    const editId = form.dataset.editId;
+   
+  
+    if (modo === "add") {
+      let codigo = generateUUIDv4();
+    const producto = {
+      titulo ,
+      precio,
+      informacion,
+      foto,
+      codigo,
+      favorito: false,
+    };
+       productos.push(producto);
+       console.log("producto nuevo: ", productos)
+       
+    } else if (modo === "editar") {
+      const index = productos.findIndex((producto) => producto.codigo === editId); // Buscamos el indice del producto a editar
+      if (index !== -1) {
+        // Si el producto existe
+        const producto = productos[index]; // Obtenemos el producto a editar del array
+        producto.titulo = titulo;
+        producto.precio = precio;
+        producto.informacion = informacion;
+        producto.foto = foto;
+        producto.category = category
+      }
+      categoryProd.style.display = "block";
     }
-  }
-  form.reset(); // Reseteamos el formulario
-  form.dataset.mode = "add"; // Cambiamos el modo del boton
-  botonEnviar.textContent = "enviar";
-  productview();
-});
-
-
+    form.reset(); // Reseteamos el formulario
+    form.dataset.mode = "add"; // Cambiamos el modo del boton
+    botonEnviar.textContent = "enviar";
+    productview();
+  });
 
 table.addEventListener("click", (e) => {
   if (e.target.classList.contains("editar")) {
@@ -67,6 +67,7 @@ table.addEventListener("click", (e) => {
       document.getElementById("precio").value = producto.informacion; // Seteamos el valor del input precio
       document.getElementById("descripcion").value = producto.informacion; // Seteamos el valor del input descripcion
       document.getElementById("url").value = producto.foto;
+      categoryProd.style.display = "none";
 
       form.dataset.mode = "editar"; // Cambiamos el modo del formulario
       form.dataset.editId = id; // Seteamos el id del producto a editar
@@ -95,8 +96,8 @@ function productview() {
     <td>${producto.precio}</td>
     <td>${producto.informacion}</td>
     <td>
-    <button class="editar" data-id="${producto.codigo}">Editar</button>
-    <button class="eliminar" data-id="${producto.codigo}">Eliminar</button> 
+    <button class="editar btn btn-warning m-1"  data-id="${producto.codigo}">Editar</button>
+    <button class="eliminar btn btn-danger m-1" data-id="${producto.codigo}">Eliminar</button> 
     </td>
   `;
     table.querySelector("tbody").appendChild(tr);
@@ -111,7 +112,6 @@ if (obtenerProductos) {
   productview();
 }
 
-
 function generateUUIDv4() {
   let uuid = "", randomValue;
   for (let i = 0; i < 32; i++) {
@@ -125,4 +125,3 @@ function generateUUIDv4() {
   }
   return uuid;
 }
-
