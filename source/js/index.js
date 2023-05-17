@@ -1,16 +1,22 @@
-// const user = JSON.parse(localStorage.getItem("currentUser"));
-// console.log(user.role);
-// if(user.role == "invitado"){
-//   window.location.href='./source/html/registro.html';
-// } control de usuario
+const user = JSON.parse(localStorage.getItem("currentUser"));
+const adm = document.getElementById("admin");
+console.log(user);
+if(user){
+  if (user !== null && user.role === "invitado") {
+    adm.style.display = "none";
+  }
+}else{
+  adm.style.display = "none";
+}
+
 const productos = JSON.parse(localStorage.getItem("productos")) || [];
 const button = document.getElementById("insert");
 
 // Obtener el botón de logout
-const logoutButton = document.getElementById('logout-btn');
+const logoutButton = document.getElementById('disconect');
 
 // Agregar un evento de escucha al botón de logout
-logoutButton.addEventListener('click', function() {
+logoutButton.addEventListener('click', (e) => {
   // Borrar el usuario actual del localStorage
   localStorage.removeItem('currentUser');
 
@@ -64,9 +70,9 @@ function mostrarNombreUsuario() {
   // Obtener el usuario actual del localStorage
   const user = JSON.parse(localStorage.getItem("currentUser"));
   // Verificar si hay un usuario conectado
-  if (user && user.nombre) {
+  if (user && user.name) {
     const userGreeting = document.getElementById("user-greeting");
-    userGreeting.textContent = "Hola, " + user.nombre;
+    userGreeting.innerHTML = `Hola ${user.name}`;
   }
 }
 

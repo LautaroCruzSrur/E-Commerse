@@ -1,4 +1,3 @@
-// Obtener el botón de logout
 const logoutButton = document.getElementById('logout-btn');
 
 // Agregar un evento de escucha al botón de logout
