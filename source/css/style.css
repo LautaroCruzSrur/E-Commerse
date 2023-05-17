@@ -11,8 +11,13 @@
     box-sizing:border-box;
 }
 
-body{
+body {
     font-family: var(--font-mono);
+    background-image: url(https://orion91.com/blog/wp-content/uploads/2021/09/Cabecera-gaming-scaled.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .bg-image {
@@ -21,7 +26,7 @@ body{
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url(https://one-tech.es/wp-content/uploads/2020/10/Razer-Iskur-1000x667.jpg);
+	background-image: url(https://www.pcreviews.es/wp-content/uploads/0h7t9vjm7ti9rBRaN-1280x640.jpeg);
 	background-size: cover;
 	background-position: center;
 	z-index: -1;
@@ -32,7 +37,7 @@ body{
     max-width: 500px;
     border: 2px solid rgba(0,0,0,.1);
     border-radius: 20px;
-	background-color: #EE6F56;
+	background-color: #eee;
 }
 
 h2 {

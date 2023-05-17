@@ -17,6 +17,16 @@ registerForm.addEventListener('submit', function(event) {
     alert('Por favor, introduce un nombre válido.');
     return;
   }
+  //validamos que el nombre solo contenga letras y no Numeros
+  if (/\d/.test(name)) {
+    alert('El nombre de usuario no debe contener números.');
+    return;
+  }
+  // Validamos que el nombre no contenga espacios en blanco
+if (name.includes(' ')) {
+  alert('El nombre de usuario no debe contener espacios en blanco.');
+  return;
+}
 
   // Validamos que el campo de correo electrónico no esté vacío y que tenga el formato correcto
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
