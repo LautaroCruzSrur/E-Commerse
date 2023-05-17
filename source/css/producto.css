@@ -26,6 +26,13 @@ nav{
     color: rgb(238, 237, 237);
 }
 
+.buttonStarV{
+    width: 8%;
+    border: none;
+    background-color: white;
+    color: rgb(255, 197, 50);
+}
+
 .buttonHeart{
     border: none;
     background-color: white;

@@ -3,6 +3,9 @@ let precio = document.getElementById("precioP");
 let categoria = document.getElementById("categoriaP");
 let descripcion = document.getElementById("descripcionP");
 let foto = document.getElementById("imagenP");
+let iconHeart = document.getElementById("iconHeart");
+let buttonHeart = document.getElementById("buttonHeart");
+
 let producto = recuperarProducto(localStorage.getItem("productoDetalle"));
 
 
@@ -30,4 +33,37 @@ function cargarProducto(producto){
     categoria.innerHTML =  producto.categoria;
     descripcion.innerHTML = producto.informacion;
     foto.innerHTML = `<img src="${producto.foto}" class="d-block w-100" alt=''>`
+    if (producto.favorito == true){
+      iconHeart.style.color="red";
+    } else {
+      iconHeart.style.color="gray";
+    }
 }
+
+buttonHeart.onclick= () => {
+  console.log("pene");
+    // Recuperar todos los productos
+    let todosProductos = JSON.parse(localStorage.getItem("productos"));
+    codigo=localStorage.getItem("productoDetalle");
+    
+    todosProductos.forEach(function(todosProductos) {
+      if (todosProductos.codigo === codigo) {
+        console.log("Encontrado");
+        if (todosProductos.favorito == false){
+          todosProductos.favorito = true;
+          console.log("cambiado a true");
+
+        } else {
+          todosProductos.favorito = false;
+          console.log("cambiado a false");
+        }
+      }
+    });
+    
+      // Guardar el array de productos actualizado en el Local Storage
+      localStorage.setItem("productos", JSON.stringify(todosProductos));
+      cargarProducto(recuperarProducto(localStorage.getItem("productoDetalle")));
+  }
+  
+
+
