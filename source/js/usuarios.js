@@ -41,6 +41,10 @@ const editButtonCell = document.createElement('td');
 const editButton = document.createElement('button');
 editButton.innerText = 'Editar';
 editButton.addEventListener('click', function() {
+
+	// Deshabilitamos el botón de editar para que no se repita, si no renueva datos.
+	editButton.disabled = true;
+
 	// Creamos un formulario para editar los datos del usuario
 	const form = document.createElement('form');
 
