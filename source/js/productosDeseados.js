@@ -34,7 +34,6 @@ const productoDeseadoHTML = (producto) => {
             <div class="card-body">
                 <h5 class="card-title">${producto.titulo}</h5>
                 <p class="card-text">${producto.precio}</p>
-                
                 <a href="#" class="btn btn-danger" id="btn-quitar-${producto.codigo}">Quitar</a>
             </div>
         </div>
