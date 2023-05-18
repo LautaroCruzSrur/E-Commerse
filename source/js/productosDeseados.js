@@ -8,21 +8,16 @@ const cargarProductos = () => {
   // no se si va a funcionar, tenes que probar
 
   // Aqui busca el elemento con id = productos en el html
-  // Esto hay que chequear, no me acuerdo si en la vista de deseados
-  // ese elemento se llama productos o si tiene otro nombre producto
+  
   const listaDeseadosHTML = document.getElementById("productos");
-  let deseadosHTML = "";
+  let deseadosHTML = ""; //variable auxiliar
 
-  const arrayProductos = getArrayProductos();
+  const arrayDeseados = getArrayDeseados();
 
   // Empiezo a recorrer todos los productos del listado
-  for (const producto of arrayProductos) {
+  for (const producto of arrayDeseados) {
     // Chequeo si el producto está marcado como favorito
-    if (producto.favorito === true) {
-      // Si es un favorito, le paso el producto a la funcion
-      // que agrega el html a la pantalla
-      deseadosHTML += productoDeseadoHTML(producto);// esto queda asi ? Si, queda asi
-    }
+    deseadosHTML += productoDeseadoHTML(producto);
   }
 
   // Todo el html de las cards que se fue generando en el bucle for, se agrega al 
@@ -35,7 +30,7 @@ const productoDeseadoHTML = (producto) => {
     <div class="col">
         <div class="card h-80">
             <a href="./source/html/producto.html">
-            <img src="../img/chair-ejecutive.png" class="card-img-top" alt="..."></a>
+            <img src="../img/${producto.foto}" class="card-img-top" alt="..."></a>
             <div class="card-body">
                 <h5 class="card-title">${producto.titulo}</h5>
                 <p class="card-text">${producto.precio}</p>
@@ -47,13 +42,14 @@ const productoDeseadoHTML = (producto) => {
 };
 
 const botonesQuitarDeseado = () => {
-  const arrayProductos = getArrayProductos();
+  const arrayDeseados = getArrayDeseados();
 
-  for (const producto of arrayProductos) {
+  for (const producto of arrayDeseados) {
     const botonQuitarId = `btn-quitar-${producto.codigo}`;
     const botonQuitar = document.getElementById(botonQuitarId);
 
     botonQuitar.addEventListener("click", () => {
+      const arrayProductos = getArrayProductos();
       const index = arrayProductos.findIndex((p) => p.codigo == producto.codigo);
       const productoEncontrado = arrayProductos[index];
 
@@ -68,15 +64,42 @@ const botonesQuitarDeseado = () => {
   }
 };
 
-const getArrayProductos = ()  => {
+const getArrayProductos = () => {
+  //Traigo los productos del storage (me los devuelve en string)
+  const productos = localStorage.getItem("productos");
+  
+  // Convierto los productos a array
+  const arrayProductos = JSON.parse(productos);
+  
+  return arrayProductos;
+};
+
+const getArrayDeseados = () => {
   //Traigo los productos del storage (me los devuelve en string)
   const productos = localStorage.getItem("productos");
   
   // Convierto los productos a array
   const arrayProductos = JSON.parse(productos)
+
+  // Selecciono los deseados y los agrego a otro array
+
+  const arrayDeseados = []
+
+  for(const producto of arrayProductos) {
+    if (producto.favorito === true) {
+      arrayDeseados.push(producto);
+    }
+  }
   
-  return arrayProductos;
-}
+  return arrayDeseados;
+};
+
+/*const getProductoId = (codigo) => {
+  const arrayCodigo = codigo.split('-');
+  const idProducto = arrayCodigo[0];
+
+  return idProducto;
+};*/
 
 mostrarProductos();
 
@@ -84,7 +107,7 @@ mostrarProductos();
 /*
 const cargarProductoPrueba = () => {
   localStorage.clear();
-  stringPrueba = '[{"titulo":"favorito","precio":"11111","informacion":"info favorito","foto":"jjddndn","codigo":"c35efb43-e211-47c1-a958-0f9ea3ea293e","favorito":true},{"titulo":"no favorito ","precio":"22222","informacion":"info no favorito","foto":"ljbjb","codigo":"aaf798cf-a98a-4718-abcc-15e17db66560","favorito":false}]'
+  stringPrueba = '[{"titulo":"Silla Gamer HTX","precio":"11111","informacion":"info favorito","foto":"chair-blue.png","codigo":"c35efb43-e211-47c1-a958-0f9ea3ea293e","favorito":true},{"titulo":"Silla Oficina negra","precio":"11122","informacion":"info favorito 2","foto":"chair-classic.png","codigo":"c35tgb43-e211-47c1-a958-0f9ea3ea293e","favorito":true},{"titulo":"Silla Gamer roja","precio":"22222","informacion":"info no favorito","foto":"chair-red.png","codigo":"aaf798cf-a98a-4718-abcc-15e17db66560","favorito":false}]'
   
   localStorage.setItem('productos', stringPrueba);
 }
