@@ -35,7 +35,7 @@ logoutButton.addEventListener('click', (e) => {
         <div class="card-body bg-dark">
           <h5 class="card-title text-white">${producto.titulo}</h5>
            <p class="card-text text-white">$${producto.precio}</p>
-        <button class="producto btn btn-danger text-center" id="${producto.codigo}"></button>
+        <button class="producto btn btn-danger text-center" id="${producto.codigo}"><h5>Comprar</h5></button>
         </div>
        </div>
       </div>  
@@ -84,7 +84,7 @@ botones.forEach((boton)=>{
     const idBotonClickeado = this.id;
     let codigo= idBotonClickeado;
     localStorage.setItem("productoDetalle", codigo);
-     window.location.href="../html/producto.html"
+     window.location.href="./source/html/producto.html"
   });
 });
 

@@ -30,7 +30,7 @@ const productoDeseadoHTML = (producto) => {
     <div class="col">
         <div class="card h-80">
             <a href="./source/html/producto.html">
-            <img src="../img/${producto.foto}" class="card-img-top" alt="..."></a>
+            <img src="${producto.foto}" class="card-img-top" alt="..."></a>
             <div class="card-body">
                 <h5 class="card-title">${producto.titulo}</h5>
                 <p class="card-text">${producto.precio}</p>
