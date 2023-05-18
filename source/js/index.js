@@ -37,7 +37,7 @@ console.log(productos);
         <div class="card-body bg-dark">
           <h5 class="card-title text-white">${producto.titulo}</h5>
            <p class="card-text text-white">$${producto.precio}</p>
-        <a href="#" class="btn btn-danger text-center"><h5>Comprar</h5></a>
+        <a href="./source/html/producto.html" class="btn btn-danger text-center"><h5>Comprar</h5></a>
         </div>
        </div>
       </div>  

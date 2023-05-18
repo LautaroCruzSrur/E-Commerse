@@ -1,3 +1,19 @@
+body{
+    background-color: rgb(238, 237, 237);
+}
+
+nav{
+    background-color: white;
+}
+.mainContent{
+    width: 80%;
+    margin: 2% auto;
+    padding: 1%;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
 .buttonBack {
     position: absolute;
     top: 5px;
@@ -10,6 +26,13 @@
     color: rgb(238, 237, 237);
 }
 
+.buttonStarV{
+    width: 8%;
+    border: none;
+    background-color: white;
+    color: rgb(255, 197, 50);
+}
+
 .buttonHeart{
     border: none;
     background-color: white;
@@ -18,7 +41,6 @@
 
 .buttonSwitch{
     background-color: rgb(238, 237, 237);
-    padding: 0;
     border-radius: 6px;
     
 }
@@ -44,3 +66,25 @@
     color: white;
 }
 
+
+
+@media (max-width: 677px) {
+
+    body {
+        background-color: white;
+    }
+    .mainContent{
+        padding: 0 !important;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .buttonBuy1{
+        display: none;
+    }
+
+    .buttonBuy2{
+        display: block;
+    }
+
+}
