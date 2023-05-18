@@ -16,7 +16,7 @@ function detalles(){
 function especificaciones(){
     btnDetalles.className="w-100 h-100 p-2 buttonSwitch_noselect"
     btnEspecificaciones.className="w-100 h-100 p-2 buttonSwitch_select"
-    descripcion.innerHTML = producto.especificaciones;
+    descripcion.innerHTML = "No hay especificaciones cargadas";
 }
 
 //Eventos

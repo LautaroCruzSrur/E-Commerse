@@ -30,7 +30,7 @@ function recuperarProducto(codigo){
 function cargarProducto(producto){
     nombre.innerHTML = producto.titulo;
     precio.innerHTML = "$" + producto.precio;
-    categoria.innerHTML =  producto.categoria;
+    categoria.innerHTML =  "";
     descripcion.innerHTML = producto.informacion;
     foto.innerHTML = `<img src="${producto.foto}" class="d-block w-100" alt=''>`
     if (producto.favorito == true){
