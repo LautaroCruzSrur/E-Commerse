@@ -35,7 +35,7 @@ logoutButton.addEventListener('click', (e) => {
         <div class="card-body bg-dark">
           <h5 class="card-title text-white">${producto.titulo}</h5>
            <p class="card-text text-white">$${producto.precio}</p>
-        <a href="./source/html/producto.html" class="btn btn-danger text-center"><h5>Comprar</h5></a>
+        <button class="producto btn btn-danger text-center" id="${producto.codigo}"></button>
         </div>
        </div>
       </div>  
@@ -76,4 +76,15 @@ function mostrarNombreUsuario() {
 
 // Llamar a la función para mostrar el nombre del usuario
 mostrarNombreUsuario();
+
+//reenvío a detalle
+const botones = document.querySelectorAll("button");
+botones.forEach((boton)=>{
+  boton.addEventListener("click",function(){
+    const idBotonClickeado = this.id;
+    let codigo= idBotonClickeado;
+    localStorage.setItem("productoDetalle", codigo);
+     window.location.href="../html/producto.html"
+  });
+});
 
