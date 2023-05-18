@@ -128,77 +128,82 @@ git p:root{
  
  
 
-body{
-    font-family: var(--font-mono);
+ body {
+   font-family: var(--font-mono);
+   background-image: url(https://orion91.com/blog/wp-content/uploads/2021/09/Cabecera-gaming-scaled.jpg);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   height: 100vh;
 }
 
 .bg-image {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-image: url(https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_1280.jpg);
-	background-size: cover;
-	background-position: center;
-	z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://www.pcreviews.es/wp-content/uploads/0h7t9vjm7ti9rBRaN-1280x640.jpeg);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
 }
 .container {
-    margin: 50px auto;
-    padding: 20px;
-    max-width: 500px;
-    border: 2px solid rgba(0,0,0,.1);
-    border-radius: 20px;
-	background-color: #EE6F56;
+   margin: 50px auto;
+   padding: 20px;
+   max-width: 500px;
+   border: 2px solid rgba(0,0,0,.1);
+   border-radius: 20px;
+  background-color: #eee;
 }
 
 h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2.5em;
+   text-align: center;
+   margin-bottom: 20px;
+   font-size: 2.5em;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+   display: block;
+   margin-bottom: 5px;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 9px;
-    border: none;
-    outline-color: #003DFF;
-    background-color: #eee;
-	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+   width: 100%;
+   padding: 10px;
+   margin-bottom: 15px;
+   border-radius: 9px;
+   border: none;
+   outline-color: #003DFF;
+   background-color: #eee;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
 input[type="submit"] {
-    background-color: #003DFF;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 9px;
-    cursor: pointer;
-    font-family: var(--font-mono);
-    transition: var(--transition);
+   background-color: #003DFF;
+   color: #fff;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 9px;
+   cursor: pointer;
+   font-family: var(--font-mono);
+   transition: var(--transition);
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049;
+   background-color: #45a049;
 }
 
 p {
-    margin-top: 1.5em;
-    text-align: center;
+   margin-top: 1.5em;
+   text-align: center;
 }
 
 p a {
-    text-decoration: none;
-    color: #003DFF;
+   text-decoration: none;
+   color: #003DFF;
 }
 .text-principal{
     margin-top: 3em;

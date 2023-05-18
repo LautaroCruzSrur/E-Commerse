@@ -1,6 +1,5 @@
 const user = JSON.parse(localStorage.getItem("currentUser"));
 const adm = document.getElementById("admin");
-console.log(user);
 if(user){
   if (user !== null && user.role === "invitado") {
     adm.style.display = "none";
@@ -25,8 +24,7 @@ logoutButton.addEventListener('click', (e) => {
   window.location.href = '/source/html/registro.html';
 });
 // valores nuevos
-console.log("hola mundo");
-console.log(productos);
+
  function insertarCards(productos){
     
   productos.forEach(producto => {
